@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class JogoDaForca {
 
 	public static void main(String[] args) {
-		Scanner teclado = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		String palavra;
 		int opcao = 0;
 
 		System.out.println("Este é um jogo da forca. Deseja jogar? 1 - Sim *** 2 - Não");
-		opcao = teclado.nextInt();
+		opcao = scanner.nextInt();
 
 		while (opcao == 1) {
 
@@ -22,47 +22,47 @@ public class JogoDaForca {
 			System.out.println("");
 
 			System.out.println("Por favor, insira a palavra: ");
-			palavra = teclado.next();
-			int i;
-			int count = palavra.length();
-			int contador = 0;
+			palavra = scanner.next();
+			int cont;
+			int letra = palavra.length();
 			int erros = 5;
-			char trocar[] = new char[count];
-			for (i = 0; i < count; i++) {
-				trocar[i] = '_';
-				System.out.print(trocar[i] + " ");
+			char trocar[] = new char[letra];
+			for (cont = 0; cont < letra; cont++) {
+				trocar[cont] = '_';
+				System.out.print(trocar[cont] + " ");
 			}
 
-			String adivinhar;
-			char adivinhando[] = new char[count];
-			char adivinhaPalavra[] = new char[count];
+			String palpite;
+			char adivinhando[] = new char[letra];
+			char adivinhaPalavra[] = new char[letra];
 
 			do {
 				System.out.print("\nDigite uma letra: ");
-				adivinhar = teclado.next();
+				palpite = scanner.next();
 
-				if (palavra.contains(adivinhar)) {
-					for (i = 0; i < count; i++) {
-						adivinhando[i] = adivinhar.toCharArray()[0];
-						adivinhaPalavra[i] = palavra.toCharArray()[i];
-						if (adivinhando[i] == adivinhaPalavra[i]) {
-							trocar[i] = adivinhando[i];
+				if (palavra.contains(palpite)) {
+					for (cont = 0; cont < letra; cont++) {
+						adivinhando[cont] = palpite.toCharArray()[0];
+						adivinhaPalavra[cont] = palavra.toCharArray()[cont];
+						if (adivinhando[cont] == adivinhaPalavra[cont]) {
+							trocar[cont] = adivinhando[cont];
 
 						}
-
-						System.out.print(trocar[i] + " ");
+												
+						System.out.print(trocar[cont] + " ");
 						
-						if (trocar[i] == 0) {
+						
+						if (trocar[cont] == 0) {
 							System.out.println("");
 							System.out.println("Parabéns!! Você Ganhou.");
 							System.out.println("");
-							//System.out.println("Deseja jogar novamente? 1 - Sim -- 2 - Não");
-							//opcao = teclado.nextInt();
-							//System.out.println("");
+							System.out.println("Deseja jogar novamente? 1 - Sim -- 2 - Não");
+							opcao = scanner.nextInt();
+							System.out.println("");
 						}
 					}
 
-				} else if (!palavra.contains(adivinhar)) {
+				} else if (!palavra.contains(palpite)) {
 					erros--;
 
 				}
@@ -74,7 +74,7 @@ public class JogoDaForca {
 			System.out.println("");
 
 			System.out.println("Deseja jogar novamente? 1 - Sim -- 2 - Não");
-			opcao = teclado.nextInt();
+			opcao = scanner.nextInt();
 
 		}
 
