@@ -14,14 +14,29 @@ public class JogoDaForca {
 
 		while (opcao == 1) {
 
-			System.out.println("|------------------------------------|");
-			System.out.println("|---------JOGO DA FORCA RONEI--------|");
-			System.out.println("|------------------------------------|");
+			System.out.println("|----------------------------------------|");
+			System.out.println("|-----------JOGO DA FORCA RONEI----------|");
+			System.out.println("|----------------------------------------|");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("|----------------------------------------|");
+			System.out.println("|O usuário 1 deve aguardar o usuário 2    ");
+			System.out.println("|inserir a palavra sem olhar para a tela.|");
+			System.out.println("|----------------------------------------|");
+			System.out.println("");
 			System.out.println("");
 			System.out.println("");
 
-			System.out.println("Por favor, insira a palavra: ");
+			System.out.println("Usuário 2, por favor, insira a palavra: ");
 			palavra = scanner.next();
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
 			System.out.println("");
 			System.out.println("");
 			System.out.println("");
@@ -44,11 +59,12 @@ public class JogoDaForca {
 			char adivinhando[] = new char[letra];
 			char adivinhaPalavra[] = new char[letra];
 			int acertos = palavra.length();
+		
 			
 			do {
-				System.out.print("\nDigite uma letra: ");
+				System.out.print("\n Usuário 1, por favor digite uma letra: ");
 				palpite = scanner.next();
-				
+							
 				System.out.print("");
 				System.out.print("");
 				
@@ -70,18 +86,19 @@ public class JogoDaForca {
 
 				}
 
-				System.out.println("\nChances Restantes: " + erros);
+				System.out.println("\nVocê ainda tem " + erros + " chances");
+				
 			} while (acertos > 0 && erros > 0);
 			if (acertos == 0) {
-				System.out.println("");
-				System.out.println("Parabéns!! Você Ganhou.");
-				System.out.println("");
+				System.out.println("|----------------------------------------|");
+				System.out.println("|----------PARABÉNS, VOCÊ VENCEU---------|");
+				System.out.println("|----------------------------------------|");
 			}
 
 			if (erros == 0) {
-				System.out.println("");
-				System.out.println("Que pena, você perdeu.");
-				System.out.println("");
+				System.out.println("|----------------------------------------|");
+				System.out.println("|----------QUE PENA, VOCÊ PERDEU---------|");
+				System.out.println("|----------------------------------------|");
 			}
 
 			System.out.println("Deseja jogar novamente? 1 - Sim || 2 - Não");
