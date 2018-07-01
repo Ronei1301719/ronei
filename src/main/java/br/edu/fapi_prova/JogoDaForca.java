@@ -1,16 +1,15 @@
-
 package br.edu.fapi_prova;
 
 import java.util.Scanner;
 
 public class JogoDaForca {
-
-	public static void main(String[] args) {
+	
+	public void executaForca() {
 		Scanner scanner = new Scanner(System.in);
 		String palavra;
 		int opcao = 0;
 
-		System.out.println("Este é um jogo da forca. Deseja jogar? 1 - Sim *** 2 - Não");
+		System.out.println("Este é um jogo da forca. Deseja jogar? 1 - Sim || 2 - Não");
 		opcao = scanner.nextInt();
 
 		while (opcao == 1) {
@@ -56,10 +55,7 @@ public class JogoDaForca {
 							System.out.println("");
 							System.out.println("Parabéns!! Você Ganhou.");
 							System.out.println("");
-							System.out.println("Deseja jogar novamente? 1 - Sim -- 2 - Não");
-							opcao = scanner.nextInt();
-							System.out.println("");
-						}
+							}
 					}
 
 				} else if (!palavra.contains(palpite)) {
@@ -73,7 +69,7 @@ public class JogoDaForca {
 			System.out.println("Acabaram suas chances!! Você Perdeu!");
 			System.out.println("");
 
-			System.out.println("Deseja jogar novamente? 1 - Sim -- 2 - Não");
+			System.out.println("Deseja jogar novamente? 1 - Sim || 2 - Não");
 			opcao = scanner.nextInt();
 
 		}
@@ -81,4 +77,7 @@ public class JogoDaForca {
 		System.out.println("Ok!! Volte outra hora!!");
 
 	}
+
 }
+
+
