@@ -34,7 +34,8 @@ public class JogoDaForca {
 			String palpite;
 			char adivinhando[] = new char[letra];
 			char adivinhaPalavra[] = new char[letra];
-
+			int acerto = palavra.length();
+			
 			do {
 				System.out.print("\nDigite uma letra: ");
 				palpite = scanner.next();
@@ -45,17 +46,12 @@ public class JogoDaForca {
 						adivinhaPalavra[cont] = palavra.toCharArray()[cont];
 						if (adivinhando[cont] == adivinhaPalavra[cont]) {
 							trocar[cont] = adivinhando[cont];
-
+							acerto--; 
 						}
 												
 						System.out.print(trocar[cont] + " ");
+											
 						
-						
-						if (trocar[cont] == 0) {
-							System.out.println("");
-							System.out.println("Parabéns!! Você Ganhou.");
-							System.out.println("");
-							}
 					}
 
 				} else if (!palavra.contains(palpite)) {
@@ -64,11 +60,19 @@ public class JogoDaForca {
 				}
 
 				System.out.println("\nChances Restantes: " + erros);
-			} while (erros > 0);
-			System.out.println("");
-			System.out.println("Acabaram suas chances!! Você Perdeu!");
-			System.out.println("");
-
+			} while (acerto > 0 && erros > 0);
+				if (acerto == 0 ) {
+				System.out.println("");
+				System.out.println("Parabéns!! Você Ganhou.");
+				System.out.println("");
+				}
+				
+				if (erros == 0 ) {
+					System.out.println("");
+					System.out.println("Que pena, você perdeu.");
+					System.out.println("");
+					}
+			
 			System.out.println("Deseja jogar novamente? 1 - Sim || 2 - Não");
 			opcao = scanner.nextInt();
 

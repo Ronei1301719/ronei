@@ -1,6 +1,6 @@
 package br.edu.fapi_prova;
 
-import br.edu.fapi.p.br.edu.fapi.prova.JogoDaForca;
+import br.edu.fapi_prova.JogoDaForca;
 
 public class ExecutaForca {
 
