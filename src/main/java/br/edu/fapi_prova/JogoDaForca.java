@@ -12,7 +12,7 @@ public class JogoDaForca {
 		System.out.println("Este é um jogo da forca. Deseja jogar? 1 - Sim || 2 - Não");
 		opcao = scanner.nextInt();
 
-		while (opcao == 1) {
+		if (opcao == 1) {
 
 			System.out.println("|----------------------------------------|");
 			System.out.println("|-----------JOGO DA FORCA RONEI----------|");
@@ -20,7 +20,7 @@ public class JogoDaForca {
 			System.out.println("");
 			System.out.println("");
 			System.out.println("|----------------------------------------|");
-			System.out.println("|O usuário 1 deve aguardar o usuário 2    ");
+			System.out.println("|O usuário 1 deve aguardar o usuário 2   |");
 			System.out.println("|inserir a palavra sem olhar para a tela.|");
 			System.out.println("|----------------------------------------|");
 			System.out.println("");
@@ -59,7 +59,6 @@ public class JogoDaForca {
 			char adivinhando[] = new char[letra];
 			char adivinhaPalavra[] = new char[letra];
 			int acertos = palavra.length();
-		
 			
 			do {
 				System.out.print("\n Usuário 1, por favor digite uma letra: ");
@@ -67,6 +66,14 @@ public class JogoDaForca {
 							
 				System.out.print("");
 				System.out.print("");
+
+				for(int i=0;i< adivinhando.length;i++)
+			    {
+				String convertida = String.valueOf(adivinhando[i]);
+			        if(convertida == palpite)
+				System.out.println("\nVocê ja tentou esta letra.");
+			            continue;
+			    }
 				
 				if (palavra.contains(palpite)) {
 					for (cont = 0; cont < letra; cont++) {
@@ -98,17 +105,18 @@ public class JogoDaForca {
 			if (erros == 0) {
 				System.out.println("|----------------------------------------|");
 				System.out.println("|----------QUE PENA, VOCÊ PERDEU---------|");
+				System.out.println("|----------A PALAVRA ERA: " + palavra +" ---------|");
 				System.out.println("|----------------------------------------|");
 			}
-
-			System.out.println("Deseja jogar novamente? 1 - Sim || 2 - Não");
-			opcao = scanner.nextInt();
-
+			
 		}
 		
 		System.out.println("");
 		System.out.println("");
-		System.out.println("Ok!! Volte outra hora!!");
+		System.out.println("|-------------------------------------------|");
+		System.out.println("|---------------JOGO ENCERRADO--------------|");
+		System.out.println("|----------ESPERAMOS VOCÊ NOVAMENTE---------|");
+		System.out.println("|-------------------------------------------|");
 
 	}
 }
